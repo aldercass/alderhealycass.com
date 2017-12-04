@@ -1,0 +1,20 @@
+{
+  "name": "aldercass.com",
+  "description": "Personal website of Alder Cass",
+  "main": "gulpfile.js",
+  "authors": [
+    "Alder Cass"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Teamwork/hackathon-tidytasks",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  }
+}

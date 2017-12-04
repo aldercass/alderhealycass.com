@@ -1,0 +1,30 @@
+{
+  "name": "aldercass.com",
+  "description": "Personal website of Alder Cass",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "directories": {
+    "public": "public"
+  },
+  "author": "Alder Cass",
+  "license": "ISC",
+  "homepage": "https://www.aldercass.com/",
+  "devDependencies": {
+    "bower": "^1.8.2",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-minify": "^2.1.0",
+    "gulp-s3-upload": "^1.6.6",
+    "gulp-uncss": "^1.0.6",
+    "gulp-watch": "^4.3.11",
+    "gutil": "^1.6.4"
+  },
+  "dependencies": {
+    "coffeescript": "^2.0.2",
+    "gulp-coffeescript": "0.0.15",
+    "gulp-pug": "^3.3.0",
+    "gulp-sass": "^3.1.0",
+    "pug": "^2.0.0-rc.4",
+    "run-sequence": "^2.2.0"
+  }
+}
