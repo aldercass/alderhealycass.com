@@ -75,10 +75,9 @@ gulp.task('watch', function () {
 gulp.task("upload", function() {
     gulp.src("./public/**")
         .pipe(s3({
-            Bucket: 'aldercass.com', //  Required 
-            ACL:    'public-read'       //  Needs to be user-defined 
+            Bucket: 'www.aldercass.com',
+            ACL: 'public-read'
         }, {
-            // S3 Constructor Options, ie: 
             maxRetries: 5
         }))
     ;
