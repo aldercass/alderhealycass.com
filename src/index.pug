@@ -1,6 +1,46 @@
 doctype html
 html
     head
-        
+        meta(charset="UTF-8")
+        title Alder Cass (.com)
+        meta(name="description", content="I like web dev and marketing and everything in between")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="twitter:card", content="summary")
+        meta(name="twitter:site", content="@aldercass")
+        meta(property="og:url", content="https://aldercass.com")
+        meta(property="og:type", content="website")
+        meta(property="og:title", content="Alder Cass (.com)")
+        meta(property="og:description", content="I like web dev and marketing and everything in between")
+        meta(property="og:image", content="https://aldercass.com/images/og.png")
+        meta(property="og:image:type", content="image/png")
+        meta(property="og:image:width", content="400")
+        meta(property="og:image:height", content="400")
+        meta(property="og:image:alt", content="me")
+        link(rel="icon", type="image/png", href="images/favicon-16.png", sizes="16x16")
+        link(rel="icon", type="image/png", href="images/favicon-32.png", sizes="32x32")
+        link(rel="icon", type="image/png", href="images/favicon-96.png", sizes="96x96")
+        style
+            include ../public/css/styles.css
+
     body
-        p hello world
+        .container
+            .content
+                .me
+                    include images/me.svg
+                h1 Alder Cass
+                p Hi, I'm Alder (like the tree) and I'm currently a Marketing Developer at #[a(href="https://careers.teamwork.com", target="_blank") Teamwork.com]. I like data analysis, APIs, frontend dev, marketing tech, and gin. 
+                ul.links 
+                    li.links-item 
+                        a.links-link(href="https://twitter.com/aldercass", target="_blank") 
+                            include images/twitter.svg
+                    li.links-item 
+                        a.links-link(href="https://github.com/aldercass", target="_blank") 
+                            include images/github.svg
+                    li.links-item 
+                        a.links-link(href="https://instagram.com/aldercass", target="_blank") 
+                            include images/instagram.svg
+        script.
+            window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+            ga('create', 'UA-110986361-1', 'auto');
+            ga('send', 'pageview');
+        script(async, src='https://www.google-analytics.com/analytics.js')

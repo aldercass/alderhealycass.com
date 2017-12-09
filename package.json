@@ -6,6 +6,9 @@
   "directories": {
     "public": "public"
   },
+  "scripts": {
+    "invalidate": "aws cloudfront create-invalidation --distribution-id E3GVOGUCDGSMG3 --paths /"
+  },
   "author": "Alder Cass",
   "license": "ISC",
   "homepage": "https://www.aldercass.com/",

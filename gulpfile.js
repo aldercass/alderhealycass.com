@@ -31,6 +31,11 @@ gulp.task('images', function() {
     .pipe(gulp.dest('./public/images/'));
 });
 
+gulp.task('sitemap', function() {
+    return gulp.src('./src/sitemap.xml')
+    .pipe(gulp.dest('./public/'));
+});
+
 gulp.task('libs', function() {
     return gulp.src([
     ])
@@ -75,7 +80,7 @@ gulp.task('watch', function () {
 gulp.task("upload", function() {
     gulp.src("./public/**")
         .pipe(s3({
-            Bucket: 'www.aldercass.com',
+            Bucket: 'aldercass.com',
             ACL: 'public-read'
         }, {
             maxRetries: 5

@@ -1,0 +1,74 @@
+html {
+    font-size: 62.5%;
+}
+body {
+    font-family: "Arial", sans-serif;
+    color: white; 
+    color: rgba(255,255,255,0.9); 
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    background: #120f36;
+}
+.container {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at 50% 30%, #322c7d, #120f36);
+}
+.content {
+    max-width: 40rem;
+    padding: 1.5rem;
+    margin: auto;
+}
+.me svg {
+    width: 18rem;
+}
+h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin: .5em 0;
+}
+p {
+    font-size: 1.4rem;
+    line-height: 1.6em;
+    margin: 1em 0;
+}
+a:link, a:visited {
+    color: inherit;
+    font-weight: 700;
+    text-decoration: none;
+}
+a:hover, a:active {
+    text-decoration: underline;
+    color: white;
+}
+.links {
+    list-style: none;
+    padding: 0;
+    margin: 1em 0;
+    display: flex;
+    font-size: 2rem;
+    justify-content: center;
+}
+.links-item {
+    margin: 0 1rem;
+}
+.links-link {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    opacity: .8;
+    transition: opacity .16s;
+}
+.links-link:hover, .links-link:active {
+    opacity: 1;
+}
+@media (max-width: 640px) {
+    .me svg {
+        width: 15rem;
+    }
+}
