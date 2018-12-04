@@ -7,12 +7,12 @@ var gutil = require('gutil');
 var minify = require('gulp-minify');
 var cleanCSS = require('gulp-clean-css');
 var s3 = require('gulp-s3-upload')({});
-var runSequence = require('run-sequence').use(gulp)
 
-gulp.task('html', function () {
+gulp.task('html', function (callback) {
     gulp.src('./src/**/*.pug')
     .pipe(pug())
     .pipe(gulp.dest('./public/'));
+    callback();
 });
 
 gulp.task('css', function () {
@@ -31,19 +31,6 @@ gulp.task('sitemap', function() {
     .pipe(gulp.dest('./public/'));
 });
 
-gulp.task('libs', function() {
-    return gulp.src([
-    ])
-    .pipe(minify({
-        ext: {
-            src:'.js',
-            min:'.min.js'
-        },
-        ignoreFiles: ['*.min.js']
-    }))
-    .pipe(gulp.dest('./public/js/'))
-});
-
 gulp.task('js', function() {
     return gulp.src('./src/coffee/*.coffee')
     .pipe(coffeescript({bare: true}).on('error', gutil.log))
@@ -55,9 +42,7 @@ gulp.task('js', function() {
     .pipe(gulp.dest('./public/js/'));
 });
 
-gulp.task('default', function(callback) {
-    return runSequence('libs','css','js','images','html',callback);
-});
+gulp.task('default', gulp.series('css','js','images','html'));
 
 gulp.task('watch', function () {
     watch('./src/coffee/**/*.coffee', function () {
