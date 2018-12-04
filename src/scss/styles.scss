@@ -3,12 +3,12 @@ html {
 }
 body {
     font-family: "Arial", sans-serif;
-    color: white; 
-    color: rgba(255,255,255,0.9); 
+    color: black; 
+    color: rgba(black,0.65); 
     text-align: center;
     padding: 0;
     margin: 0;
-    background: #120f36;
+    background: #f5f5f5;
 }
 .container {
     position: absolute;
@@ -17,7 +17,6 @@ body {
     height: 100%;
     align-items: center;
     justify-content: center;
-    background: radial-gradient(circle at 50% 30%, #322c7d, #120f36);
 }
 .content {
     max-width: 40rem;
@@ -44,7 +43,7 @@ a:link, a:visited {
 }
 a:hover, a:active {
     text-decoration: underline;
-    color: white;
+    color: black;
 }
 .links {
     list-style: none;
@@ -61,11 +60,14 @@ a:hover, a:active {
     display: block;
     width: 2rem;
     height: 2rem;
-    opacity: .8;
+    opacity: .65;
     transition: opacity .16s;
 }
 .links-link:hover, .links-link:active {
     opacity: 1;
+}
+.links-link svg path {
+    fill: black;
 }
 @media (max-width: 640px) {
     .me svg {
