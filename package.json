@@ -14,19 +14,18 @@
   "homepage": "https://www.aldercass.com/",
   "devDependencies": {
     "bower": "^1.8.4",
-    "gulp": "^3.9.1",
-    "gulp-clean-css": "^3.10.0",
-    "gulp-minify": "^2.1.0",
+    "gulp": "^4.0.0",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-minify": "^3.1.0",
     "gulp-s3-upload": "^1.7.1",
-    "gulp-uncss": "^1.0.6",
-    "gulp-watch": "^4.3.11",
+    "gulp-watch": "^5.0.1",
     "gutil": "^1.6.4"
   },
   "dependencies": {
     "coffeescript": "^2.3.2",
     "gulp-coffeescript": "0.0.15",
-    "gulp-pug": "^3.3.0",
-    "gulp-sass": "^3.2.1",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.0.2",
     "pug": "^2.0.3",
     "run-sequence": "^2.2.1"
   }

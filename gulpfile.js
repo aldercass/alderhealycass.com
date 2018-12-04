@@ -6,7 +6,6 @@ var pug  = require('gulp-pug');
 var gutil = require('gutil');
 var minify = require('gulp-minify');
 var cleanCSS = require('gulp-clean-css');
-var uncss = require('gulp-uncss');
 var s3 = require('gulp-s3-upload')({});
 var runSequence = require('run-sequence').use(gulp)
 
@@ -19,10 +18,6 @@ gulp.task('html', function () {
 gulp.task('css', function () {
     return gulp.src('./src/scss/styles.scss')
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-    .pipe(uncss({
-        html: ['./public/index.html'],
-        ignore: []
-    }))
     .pipe(gulp.dest('./public/css/'));
 });
 
