@@ -1,5 +1,5 @@
 {
-  "name": "aldercass.com",
+  "name": "alderhealycass.com",
   "description": "Personal website of Alder Cass",
   "version": "1.0.0",
   "main": "gulpfile.js",
@@ -7,17 +7,16 @@
     "public": "public"
   },
   "scripts": {
-    "invalidate": "aws cloudfront create-invalidation --distribution-id E3GVOGUCDGSMG3 --paths /"
+    "upload": "aws s3 rm s3://alderhealycass.com/ --recursive && aws s3 cp public/ s3://alderhealycass.com/ --recursive --acl public-read --metadata-directive REPLACE --cache-control max-age=31536000,public && aws cloudfront create-invalidation --distribution-id ETWQNVZDZS053 --paths \"/*\"",
+    "invalidate": "aws cloudfront create-invalidation --distribution-id ETWQNVZDZS053 --paths /"
   },
   "author": "Alder Cass",
   "license": "ISC",
-  "homepage": "https://www.aldercass.com/",
+  "homepage": "https://alderhealycass.com/",
   "devDependencies": {
     "bower": "^1.8.4",
     "gulp": "^4.0.0",
-    "gulp-clean-css": "^4.0.0",
     "gulp-minify": "^3.1.0",
-    "gulp-s3-upload": "^1.7.1",
     "gulp-watch": "^5.0.1",
     "gutil": "^1.6.4"
   },
@@ -25,7 +24,7 @@
     "coffeescript": "^2.3.2",
     "gulp-coffeescript": "0.0.15",
     "gulp-pug": "^4.0.1",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^4.1.0",
     "pug": "^2.0.3"
   }
 }
