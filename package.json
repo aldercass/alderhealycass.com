@@ -7,7 +7,7 @@
     "public": "public"
   },
   "scripts": {
-    "upload": "aws s3 rm s3://alderhealycass.com/ --recursive && aws s3 cp public/ s3://alderhealycass.com/ --recursive --acl public-read --metadata-directive REPLACE --cache-control max-age=31536000,public && aws cloudfront create-invalidation --distribution-id ETWQNVZDZS053 --paths \"/*\"",
+    "upload": "sh upload.sh",
     "invalidate": "aws cloudfront create-invalidation --distribution-id ETWQNVZDZS053 --paths /"
   },
   "author": "Alder Cass",
@@ -16,6 +16,7 @@
   "devDependencies": {
     "bower": "^1.8.4",
     "gulp": "^4.0.0",
+    "gulp-gzip": "^1.4.2",
     "gulp-minify": "^3.1.0",
     "gulp-watch": "^5.0.1",
     "gutil": "^1.6.4"

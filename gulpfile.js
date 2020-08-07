@@ -5,19 +5,19 @@ var sass = require('gulp-sass');
 var pug  = require('gulp-pug');
 var gutil = require('gutil');
 var minify = require('gulp-minify');
+var gzip = require('gulp-gzip');
 
 gulp.task('html', function (callback) {
-    gulp.src('./src/**/*.pug')
-    .pipe(pug({
-        pretty: true
-    }))
+    gulp.src('./src/index.pug')
+    .pipe(pug())
+    .pipe(gzip({ append: false }))
     .pipe(gulp.dest('./public/'));
     callback();
 });
 
 gulp.task('css', function () {
     return gulp.src('./src/scss/styles.scss')
-    .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
+    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
     .pipe(gulp.dest('./public/css/'));
 });
 
@@ -33,6 +33,7 @@ gulp.task('sitemap', function() {
 
 gulp.task('manifest', function() {
     return gulp.src('./src/manifest.json')
+    .pipe(gzip({ append: false }))
     .pipe(gulp.dest('./public/'));
 });
 

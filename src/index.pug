@@ -19,8 +19,6 @@ html(lang="en-GB")
         meta(name="theme-color", content="#e5e5e5")
         link(rel="canonical", href="https://alderhealycass.com")
         link(rel="manifest", href="/manifest.json")
-        link(rel="preconnect", href="https://www.google-analytics.com")
-        link(rel="preconnect", href="https://fonts.googleapis.com/")
         link(rel="preconnect", href="https://fonts.gstatic.com/")
         link(rel="icon", type="image/png", href="images/favicon-16.png?v=3", sizes="16x16")
         link(rel="icon", type="image/png", href="images/favicon-32.png?v=3", sizes="32x32")
@@ -62,9 +60,6 @@ html(lang="en-GB")
                             span LinkedIn
                             include images/linkedin.svg
         script.
-            window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-            ga('create', 'UA-110986361-1', 'auto');
-            ga('send', 'pageview');
             if ('serviceWorker' in navigator) {
                 window.addEventListener('load', () => {
                     navigator.serviceWorker.register('/service-worker.js');
@@ -76,4 +71,3 @@ html(lang="en-GB")
             window.addEventListener("load", function () {
                 document.querySelector(".me").classList.add("transition");
             });
-        script(async, src='https://www.google-analytics.com/analytics.js')
