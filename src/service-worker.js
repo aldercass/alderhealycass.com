@@ -2,8 +2,8 @@
 (function(self){
   if (self.location.origin.split("/")[2] !== "alderhealycass.com") return;  
   
-  const PRECACHE = 'precache-v4';
-  const RUNTIME = 'runtime-v3';
+  const PRECACHE = 'precache-45346';
+  const RUNTIME = 'runtime-45346';
 
   const PRECACHE_URLS = [
     'index.html',
@@ -13,7 +13,13 @@
     '/images/me@3x.png',
     '/images/me.webp',
     '/images/me@2x.webp',
-    '/images/me@3x.webp'
+    '/images/me@3x.webp',
+    '/images/me2.png',
+    '/images/me2@2x.png',
+    '/images/me2@3x.png',
+    '/images/me2.webp',
+    '/images/me2@2x.webp',
+    '/images/me2@3x.webp'
   ];
 
   self.addEventListener('install', event => {

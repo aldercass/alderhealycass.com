@@ -21,6 +21,7 @@ html(lang="en-GB")
         link(rel="manifest", href="/manifest.json")
         link(rel="preconnect", href="https://www.google-analytics.com")
         link(rel="preconnect", href="https://fonts.googleapis.com/")
+        link(rel="preconnect", href="https://fonts.gstatic.com/")
         link(rel="icon", type="image/png", href="images/favicon-16.png?v=3", sizes="16x16")
         link(rel="icon", type="image/png", href="images/favicon-32.png?v=3", sizes="32x32")
         link(rel="icon", type="image/png", href="images/favicon-96.png?v=3", sizes="96x96")
@@ -31,28 +32,34 @@ html(lang="en-GB")
     body
         .container
             .content
-                .me
-                    picture(width="252", height="281")
-                        source(srcset="/images/me.webp?v=2, /images/me@2x.webp?v=2 2x, /images/me@3x.webp?v=2 3x", type="image/webp")
-                        source(srcset="/images/me.png?v=2, /images/me@2x.png?v=2 2x, /images/me@3x.png?v=2 3x", type="image/png")
-                        img(src="/images/me.png", srcset="/images/me.png?v=2, /images/me@2x.png?v=2 2x, /images/me@3x.png?v=2 3x", width="252", height="281", alt="Alder Healy-Cass")
-                h1 Alder Healy-Cass
-                p Hi, I'm Alder (like the tree) and I'm currently Marketing Operations Lead at #[a(href="https://www.teamwork.com", rel="noopener", target="_blank" title="Teamwork") Teamwork]. I'm a big data nerd who loves coming up with new and efficient ways of intergrating all manner of marketing &amp; sales services through experienced use of APIs, webhooks, and data analytics. 
-                ul.links 
-                    li.links-item 
+                header.me
+                    picture
+                        source(srcset="/images/me.webp, /images/me@2x.webp 2x, /images/me@3x.webp 3x", type="image/webp")
+                        source(srcset="/images/me.png, /images/me@2x.png 2x, /images/me@3x.png 3x", type="image/png")
+                        img(class="cartoon", src="/images/me.png", srcset="/images/me.png, /images/me@2x.png 2x, /images/me@3x.png 3x", width="252", height="281", alt="Me")
+                    picture
+                        source(srcset="/images/me2.webp, /images/me2@2x.webp 2x, /images/me2@3x.webp 3x", type="image/webp")
+                        source(srcset="/images/me2.png, /images/me2@2x.png 2x, /images/me2@3x.png 3x", type="image/png")
+                        img(class="real hidden", src="/images/me2.png", srcset="/images/me2.png, /images/me2@2x.png 2x, /images/me2@3x.png 3x", width="252", height="281", alt="Also me")
+                main
+                    h1 Alder Healy-Cass
+                    p Hi, I'm Alder (like the tree) and I currently run Marketing Operations at #[a(href="https://www.teamwork.com", rel="noopener", target="_blank") Teamwork], where I'm all about coming up with new and efficient ways of integrating all manner of marketing &amp; sales services through experienced use of APIs, webhooks, and data analytics. I'm also a big fan of food, motorcycles, and civil rights.
+                footer
+                    nav.links 
                         a.links-link(title="Twitter", rel="noopener", href="https://twitter.com/alderhealycass", target="_blank") 
+                            span Twitter
                             include images/twitter.svg
-                    li.links-item 
                         a.links-link(title="GitHub", rel="noopener", href="https://github.com/aldercass", target="_blank") 
+                            span GitHub
                             include images/github.svg
-                    li.links-item 
                         a.links-link(title="CodePen", rel="noopener", href="https://codepen.io/aldercass", target="_blank") 
+                            span CodePen
                             include images/codepen.svg
-                    li.links-item 
                         a.links-link(title="Instagram", rel="noopener", href="https://instagram.com/alderhealycass", target="_blank") 
+                            span Instagram
                             include images/instagram.svg
-                    li.links-item 
                         a.links-link(title="LinkedIn", rel="noopener", href="https://www.linkedin.com/in/alderhealycass", target="_blank") 
+                            span LinkedIn
                             include images/linkedin.svg
         script.
             window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
@@ -60,7 +67,13 @@ html(lang="en-GB")
             ga('send', 'pageview');
             if ('serviceWorker' in navigator) {
                 window.addEventListener('load', () => {
-                    navigator.serviceWorker.register('/service-worker.js')
+                    navigator.serviceWorker.register('/service-worker.js');
                 });
             }
+            document.querySelector(".me").addEventListener("click", function () {
+                this.classList.toggle('touching');
+            });
+            window.addEventListener("load", function () {
+                document.querySelector(".me").classList.add("transition");
+            });
         script(async, src='https://www.google-analytics.com/analytics.js')
