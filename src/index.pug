@@ -60,13 +60,23 @@ html(lang="en-GB")
                             span LinkedIn
                             include images/linkedin.svg
         script.
-            if ('serviceWorker' in navigator) {
+            if (window.location.href.indexOf("clearsw") !== -1) {
+                navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                    for(let registration of registrations) {
+                        registration.unregister()
+                    }
+                });
+            } else if ('serviceWorker' in navigator) {
                 window.addEventListener('load', () => {
                     navigator.serviceWorker.register('/service-worker.js');
                 });
             }
-            document.querySelector(".me").addEventListener("click", function () {
-                this.classList.toggle('touching');
+            document.querySelector(".me").addEventListener("touchstart", function (e) {
+                this.classList.add('touching');
+                e.preventDefault();
+            });
+            document.addEventListener("touchend", function (e) {
+                document.querySelector(".me").classList.remove('touching');
             });
             window.addEventListener("load", function () {
                 document.querySelector(".me").classList.add("transition");

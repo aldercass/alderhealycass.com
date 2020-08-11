@@ -84,7 +84,7 @@ body {
 @media (hover: none) {
     .me.touching {
         .cartoon {
-            transform: rotateY(180deg);
+            transform: rotateY(-180deg);
         }
 
         .real {
