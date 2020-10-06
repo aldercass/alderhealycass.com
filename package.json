@@ -8,7 +8,7 @@
   },
   "scripts": {
     "upload": "sh upload.sh",
-    "invalidate": "aws cloudfront create-invalidation --distribution-id ETWQNVZDZS053 --paths /"
+    "invalidate": "aws cloudfront create-invalidation --distribution-id $AHC_CACHE --paths /"
   },
   "author": "Alder Cass",
   "license": "ISC",
