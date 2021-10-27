@@ -1,45 +1,42 @@
 var gulp = require('gulp');
 var watch = require('gulp-watch');
 var coffeescript = require('gulp-coffeescript');
-var sass = require('gulp-sass');
+var sass = require('gulp-sass')(require('sass'));
 var pug  = require('gulp-pug');
 var gutil = require('gutil');
 var minify = require('gulp-minify');
-var gzip = require('gulp-gzip');
 
 gulp.task('html', function (callback) {
     gulp.src('./src/index.pug')
     .pipe(pug())
-    .pipe(gzip({ append: false }))
-    .pipe(gulp.dest('./public/'));
+    .pipe(gulp.dest('./'));
     callback();
 });
 
 gulp.task('css', function () {
     return gulp.src('./src/scss/styles.scss')
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-    .pipe(gulp.dest('./public/css/'));
+    .pipe(gulp.dest('./css/'));
 });
 
 gulp.task('images', function() {
     return gulp.src('./src/images/**/*')
-    .pipe(gulp.dest('./public/images/'));
+    .pipe(gulp.dest('./images/'));
 });
 
 gulp.task('sitemap', function() {
     return gulp.src('./src/sitemap.xml')
-    .pipe(gulp.dest('./public/'));
+    .pipe(gulp.dest('./'));
 });
 
 gulp.task('manifest', function() {
     return gulp.src('./src/manifest.json')
-    .pipe(gzip({ append: false }))
-    .pipe(gulp.dest('./public/'));
+    .pipe(gulp.dest('./'));
 });
 
 gulp.task('serviceworker', function() {
     return gulp.src('./src/service-worker.js')
-    .pipe(gulp.dest('./public/'));
+    .pipe(gulp.dest('./'));
 });
 
 gulp.task('js', function() {
@@ -50,7 +47,7 @@ gulp.task('js', function() {
             min:'.min.js'
         },
     }))
-    .pipe(gulp.dest('./public/js/'));
+    .pipe(gulp.dest('./js/'));
 });
 
 gulp.task('default', gulp.series('css','js','images','html','sitemap','manifest','serviceworker'));

@@ -14,18 +14,18 @@
   "license": "ISC",
   "homepage": "https://alderhealycass.com/",
   "devDependencies": {
-    "bower": "^1.8.4",
-    "gulp": "^4.0.0",
+    "coffeescript": "^2.6.1",
+    "gulp": "^4.0.2",
+    "gulp-coffeescript": "^0.0.15",
     "gulp-gzip": "^1.4.2",
     "gulp-minify": "^3.1.0",
+    "gulp-pug": "^5.0.0",
+    "gulp-sass": "^5.0.0",
     "gulp-watch": "^5.0.1",
-    "gutil": "^1.6.4"
+    "gutil": "^1.6.4",
+    "pug": "^3.0.2"
   },
   "dependencies": {
-    "coffeescript": "^2.3.2",
-    "gulp-coffeescript": "0.0.15",
-    "gulp-pug": "^4.0.1",
-    "gulp-sass": "^4.1.0",
-    "pug": "^2.0.3"
+    "sass": "^1.43.4"
   }
 }
