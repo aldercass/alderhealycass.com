@@ -24,10 +24,10 @@
 document.querySelector('.me').addEventListener('touchstart', function (e) {
     this.classList.add('touching');
     e.preventDefault();
-});
+}, {passive: true});
 document.addEventListener("touchend", function (e) {
     document.querySelector(".me").classList.remove('touching');
-});
+}, {passive: true});
 window.addEventListener("load", function () {
     document.querySelector(".me").classList.add("transition");
 });</script></body></html>
