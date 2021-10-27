@@ -9,34 +9,34 @@ var minify = require('gulp-minify');
 gulp.task('html', function (callback) {
     gulp.src('./src/index.pug')
     .pipe(pug())
-    .pipe(gulp.dest('./'));
+    .pipe(gulp.dest('./docs/'));
     callback();
 });
 
 gulp.task('css', function () {
     return gulp.src('./src/scss/styles.scss')
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-    .pipe(gulp.dest('./css/'));
+    .pipe(gulp.dest('./docs/css/'));
 });
 
 gulp.task('images', function() {
     return gulp.src('./src/images/**/*')
-    .pipe(gulp.dest('./images/'));
+    .pipe(gulp.dest('./docs/images/'));
 });
 
 gulp.task('sitemap', function() {
     return gulp.src('./src/sitemap.xml')
-    .pipe(gulp.dest('./'));
+    .pipe(gulp.dest('./docs/'));
 });
 
 gulp.task('manifest', function() {
     return gulp.src('./src/manifest.json')
-    .pipe(gulp.dest('./'));
+    .pipe(gulp.dest('./docs/'));
 });
 
 gulp.task('serviceworker', function() {
     return gulp.src('./src/service-worker.js')
-    .pipe(gulp.dest('./'));
+    .pipe(gulp.dest('./docs/'));
 });
 
 gulp.task('js', function() {
@@ -47,7 +47,7 @@ gulp.task('js', function() {
             min:'.min.js'
         },
     }))
-    .pipe(gulp.dest('./js/'));
+    .pipe(gulp.dest('./docs/js/'));
 });
 
 gulp.task('default', gulp.series('css','js','images','html','sitemap','manifest','serviceworker'));
