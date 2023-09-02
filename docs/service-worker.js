@@ -2,8 +2,8 @@
 (function(self){
   if (self.location.origin.split("/")[2] !== "alderhealycass.com") return;  
   
-  const PRECACHE = 'precache-45346';
-  const RUNTIME = 'runtime-45346';
+  const PRECACHE = 'precache-2343245';
+  const RUNTIME = 'runtime-2343245';
 
   const PRECACHE_URLS = [
     'index.html',
