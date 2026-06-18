@@ -1,0 +1,30 @@
+doctype html
+html(lang="en-GB")
+    head
+        meta(charset="UTF-8")
+        title 👋 I'm Alder Healy-Cass
+        meta(name="description", content="Data Engineer from Cork, Ireland.")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(property="og:url", content="https://alderhealycass.com")
+        meta(property="og:type", content="website")
+        meta(property="og:title", content="👋 I'm Alder Healy-Cass")
+        meta(property="og:description", content="Data Engineer from Cork, Ireland.")
+        meta(name="theme-color", content="#ffee8c", media="(prefers-color-scheme: light)")
+        meta(name="theme-color", content="#231f20", media="(prefers-color-scheme: dark)")
+        link(rel="canonical", href="https://alderhealycass.com")
+        link(rel="preconnect", href="https://fonts.gstatic.com/")
+        style
+            include includes/style.css
+    body 
+        #container
+            #content
+                header.me
+                    picture
+                        source(srcset="/images/me.webp, /images/me2@2x.webp 2x, /images/me2@3x.webp 3x", type="image/webp")
+                        source(srcset="/images/me.png, /images/me2@2x.png 2x, /images/me2@3x.png 3x", type="image/png")
+                        img(class="real hidden", src="/images/me.png", srcset="/images/me.png, /images/me2@2x.png 2x, /images/me2@3x.png 3x", width="252", height="281", alt="Also me")
+                main
+                    h1 Hi! I'm Alder Healy-Cass.
+                    p I'm a Data Engineer from Cork, Ireland. I enjoy sci-fi, cooking, homelabbing, and civil rights.
+                footer
+                    a(href="https://www.linkedin.com/in/alderhealycass" target="_blank") linkedin.com/in/alderhealycass 
