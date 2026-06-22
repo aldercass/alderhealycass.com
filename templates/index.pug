@@ -14,6 +14,9 @@ html(lang="en-GB")
         link(rel="canonical", href="https://alderhealycass.com")
         link(rel="preconnect", href="https://fonts.gstatic.com/")
         link(rel="icon", type="image/png", href="images/favicon-96x96.png", sizes="96x96")
+        link(rel="icon", type="image/png", href="images/favicon-32x32.png", sizes="32x32")
+        link(rel="icon", type="image/png", href="images/favicon-16x16.png", sizes="16x16")
+        link(rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png")
         link(rel="shortcut icon", href="images/favicon.ico")
         style
             include includes/style.css
@@ -22,9 +25,9 @@ html(lang="en-GB")
             #content
                 header.me
                     picture
-                        source(srcset="/images/self.webp, /images/self@2x.webp 2x, /images/self@3x.webp 3x", type="image/webp")
-                        source(srcset="/images/self.png, /images/self@2x.png 2x, /images/self@3x.png 3x", type="image/png")
-                        img(class="real hidden", src="/images/self.png", srcset="/images/self.png, /images/self@2x.png 2x, /images/self@3x.png 3x", width="252", height="281", alt="Also me")
+                        source(srcset="/images/self.png, /images/self@2x.png 2x, /images/self@3x.png 3x", type="image/png" media="(prefers-color-scheme: light)")
+                        source(srcset="/images/self_darkmode.png, /images/self_darkmode@2x.png 2x, /images/self_darkmode@3x.png 3x", type="image/png" media="(prefers-color-scheme: dark)")
+                        img(src="/images/self.png", srcset="/images/self.png, /images/self@2x.png 2x, /images/self@3x.png 3x", width="252", height="281", alt="Me and my son Walter")
                 main
                     h1 Hi! I'm Alder Healy-Cass.
                     p I'm a Data Engineer from Cork, Ireland. I enjoy sci-fi, cooking, homelabbing, and civil rights.
